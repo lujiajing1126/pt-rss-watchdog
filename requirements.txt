@@ -1,0 +1,4 @@
+requests
+xmltodict
+redis
+beautifulsoup4
