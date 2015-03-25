@@ -21,6 +21,7 @@ module API
 
     error_formatter :json, API::ErrorFormatter
 
+    helpers API::Helpers
     mount API::V1::Root
   end
 end
