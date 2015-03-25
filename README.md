@@ -67,11 +67,11 @@ http://localhost:3000/doc
 
 ## TODO
 
-[] api接口在收到新的torrent的时候异步发出消息
-[] 用户系统
-[] HTML-Mobile页面
-[] 集成Sidekiq和消息推送
-[] 自定义过滤器
+* [ ] api接口在收到新的torrent的时候异步发出消息
+* [ ] 用户系统
+* [ ] HTML-Mobile页面
+* [ ] 集成Sidekiq和消息推送
+* [ ] 自定义过滤器
 
 ## Contribution
 
