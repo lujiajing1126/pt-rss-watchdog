@@ -2,3 +2,4 @@ requests
 xmltodict
 redis
 beautifulsoup4
+lxml
