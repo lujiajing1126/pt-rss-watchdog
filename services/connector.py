@@ -36,7 +36,11 @@ def scarpy(debug=False):
 			enclosure = item.enclosure['url']
 			pub_date = email.utils.mktime_tz(email.utils.parsedate_tz(item.pubDate.string))
 			payload = {'title':title,'description':description,'link':link,'guid':guid,'enclosure':enclosure,'pub_date':pub_date}
-			req = requests.post('http://localhost:3000/api/v1/torrents/',data = payload)
+			try:
+				req = requests.post('http://localhost:3000/api/v1/torrents/',data = payload)
+			except ConnectionError:
+				logger.warning("Api Service is not started!")
+				sys.exit(1)
 			logger.info(req.text)
 	    logger.info("Request for Api")
 	else:

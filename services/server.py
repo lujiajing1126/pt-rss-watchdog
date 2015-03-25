@@ -7,17 +7,19 @@ import logging
 import threading
 
 class Rssbug(Daemon):
-    logger = logging.getLogger("ptfd_rss_service")
     def run(self):
-        """The Real Worker
+        """The Real Daemon Worker
         """
+        self.logger_ins = logging.getLogger("ptfd_rss_service")
+        self.isFirstTime = True
         while True:
             try:
-                t = threading.Thread(target=scarpy,args=(False,))
+                t = threading.Thread(target=scarpy,args=(self.isFirstTime,))
                 t.setDaemon(True)
                 t.start()
             except:
-                logger.warning("Main Loop Error!")
+                self.logger_ins.warning("Main Loop Error!")
+            self.isFirstTime = False
             time.sleep(300)
 
 if __name__ == "__main__":
