@@ -2,3 +2,6 @@
 *.log
 *.pyc
 dump.rdb
+*.out
+bower_components
+.idea

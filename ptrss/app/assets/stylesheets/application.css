@@ -12,5 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-material-design/dist/css/material
+ *= require bootstrap-material-design/dist/css/ripples
  *= require swagger-ui
  */

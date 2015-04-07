@@ -1,0 +1,9 @@
+- @torrents.each do |torrent|
+  div.card
+    div.card-height-indicator
+    div.card-content
+      div.card-image
+        h3.card-image-headline
+          = torrent.title
+      div.card-body
+        == torrent.description
