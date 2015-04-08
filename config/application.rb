@@ -20,7 +20,7 @@ module Ptrss
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.paths.add File.join('lib', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('lib','api')]
+    config.autoload_paths += Dir[Rails.root.join('lib','api'),Rails.root.join('lib')]
     config.eager_load_paths += Dir[Rails.root.join('lib')] if Rails.env.development?
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
