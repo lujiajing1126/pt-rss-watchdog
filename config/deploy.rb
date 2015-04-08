@@ -40,6 +40,7 @@ set :rbenv_type, :user
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
+set :unicorn_path, "#{deploy_to}/current/config/unicorn.rb"
 
 namespace :deploy do
   desc 'Copies .git folder'
