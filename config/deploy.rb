@@ -52,8 +52,16 @@ namespace :deploy do
     end
   end
 
+  desc 'install bower'
+  task :bower_install do
+    on roles(:app) do
+      execute :bower,'install'
+    end
+  end
+
 
   before 'bundler:install', 'deploy:copy_git'
+  after 'bundler:install','deploy:bower_install'
 
   desc 'restart unicorn'
   task :restart do
