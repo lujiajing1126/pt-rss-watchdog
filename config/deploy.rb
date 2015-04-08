@@ -69,11 +69,6 @@ namespace :deploy do
   desc 'restart unicorn'
   task :restart do
     invoke 'unicorn:restart'
-    on roles(:app) do
-      within release_path do
-        execute "cd #{release_path}/public/webapp-src && make && cd .. && genRelease build --host-name=api.whosv.net webapp && mv Packages #{release_path}/public/webapp"
-      end
-    end
   end
 
   task :stop do
