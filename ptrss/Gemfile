@@ -26,12 +26,18 @@ gem 'hashie-forbidden_attributes'
 gem 'bower-rails','~> 0.9.2'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'nprogress-rails'
 
 # Database
 gem 'mongoid', github: 'mongoid/mongoid'
 
 # Template Engine
 gem 'slim'
+gem 'kaminari'
+
+# Notification
+gem 'jpush', '~> 3.2.1'
+gem 'sidekiq'
 
 # API Layer
 gem 'grape'

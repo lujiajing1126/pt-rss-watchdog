@@ -1,9 +1,5 @@
+ul.list-group
 - @torrents.each do |torrent|
-  div.card
-    div.card-height-indicator
-    div.card-content
-      div.card-image
-        h3.card-image-headline
-          = torrent.title
-      div.card-body
-        == torrent.description
+  li.list-group-item
+    = link_to torrent.title,torrent_path(torrent.id)
+= paginate @torrents

@@ -22,11 +22,14 @@ module API
             #binding.pry
             torrent_params = ActionController::Parameters.new(params).permit(:title,:description,:link,:guid,:enclosure,:pub_date)
             torrent = Torrent.new(torrent_params)
-          end
-          if torrent.save
-            render_no_content!
+            if torrent.save
+              PushWorker.perform_async torrent.id.to_s
+              render_no_content!
+            else
+              render_api_error! 'error',HTTP_INTERNAL_SERVER_ERROR
+            end
           else
-            render_api_error! 'error',HTTP_INTERNAL_SERVER_ERROR
+            render_no_content!
           end
         end
       end
