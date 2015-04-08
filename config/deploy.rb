@@ -55,7 +55,7 @@ namespace :deploy do
   desc 'install bower'
   task :bower_install do
     on roles(:app) do
-      execute :bower,'install'
+      execute 'rake bower:install'
     end
   end
 
