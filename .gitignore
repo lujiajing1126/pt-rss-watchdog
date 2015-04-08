@@ -13,6 +13,7 @@ dump.rdb
 bower_components
 .idea
 /.bundle
+*.swp
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
