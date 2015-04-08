@@ -55,7 +55,9 @@ namespace :deploy do
   desc 'install bower'
   task :bower_install do
     on roles(:app) do
-      execute 'rake bower:install'
+      within release_path do
+        execute 'bundle exec rake bower:install'
+      end
     end
   end
 
